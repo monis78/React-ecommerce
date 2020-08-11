@@ -2,8 +2,8 @@ import { FETCH_PRODUCTS,ORDER_PRODUCTS_BY_PRICE } from "./actiontypes";
 
 
 export const fetchProducts = () =>(dispatch)=>{
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url = "https://api.npoint.io/2a4561b816e5b6d00894"; 
+//     const proxyurl = "https://cors-anywhere.herokuapp.com/";
+//     const url = "https://api.npoint.io/2a4561b816e5b6d00894"; 
     fetch("https://api.npoint.io/2a4561b816e5b6d00894", {
         headers : { 
             'Content-Type': 'application/json',
