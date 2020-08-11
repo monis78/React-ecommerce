@@ -17,8 +17,10 @@ export const fetchProducts = () =>(dispatch)=>{
             })
         }
 
-        export const sortProducts = (products,sort) =>(dispatch)=>{  
-    console.log(products)
+
+
+export const sortProducts = (products,sort) =>(dispatch)=>{  
+    products=products.slice();
         if(sort !==''){ 
             products.sort((a,b)=>( sort==='lowest')?
             (Number(a.price.split(".")[1].replace(",","")) > Number(b.price.split(".")[1].replace(",",""))? 1:-1)
