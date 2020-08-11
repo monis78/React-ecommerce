@@ -2,27 +2,30 @@ import { ADD_TO_CART ,REMOVE_FROM_CART} from "./actiontypes";
 
 export const addToCart =(items, product)=>(dispatch)=>{
     console.log(items, product)
-let cartItems= []     
+    console.log(items.articleCode,product["articleCode"])
+let cartItems= items     
 
             let productAlreadyInCart = false;
-            console.log(items, product,productAlreadyInCart,+"1")
             items.forEach(item=> {
-                if(item.articlecode===product.articlecode){
+                if(item.articleCode===product.articleCode){
+                    
                     productAlreadyInCart = true;
                     item.count++;
+                    
                     console.log("failed")
                 }
             });
+
             if(!productAlreadyInCart){
                 cartItems.push({...product,count:1})
                 console.log("executed")
             }
-            console.log(items, product,productAlreadyInCart,+"2")
+            console.log(items, product,productAlreadyInCart,+"2", cartItems)
             
             localStorage.setItem("cartItems",JSON.stringify(cartItems));
             
             return dispatch({type:ADD_TO_CART, payload:{
-                cartItems:cartItems
+                cartItems
             
             }
         });
